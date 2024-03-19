@@ -1,5 +1,4 @@
 ---
-namespace: kubecon
 apps:
   - name: "apples"
     description: |-

@@ -1,25 +1,3 @@
 #@ load("@ytt:overlay", "overlay")
 
-#@ cm = overlay.subset({"kind": "ConfigMap"})
-
-#@overlay/match by=cm, expects="1+"
----
-apiVersion: v1daniel1
-
-#@overlay/match by=overlay.not_op(cm), expects="1+"
-#@overlay/remove
----
-
-#@ def capitalize(sentence, _):
-#@ result = []
-#@ for i, word in enumerate(sentence.split(" ")):
-#@    result.append(word if i % 2 == 0 else word.upper())
-#@ end
-#@ return " ".join(result)
-#@ end
-
-#@overlay/match by=cm, expects="1+"
----
-data:
-  #@overlay/replace via=capitalize
-  index.html:
+#! no overlays yet

@@ -123,6 +123,18 @@ fi
 # 🥾️ Bootstrap the cluster by pulling http-echo
 #    this makes for a faster demo
 ###########################################
-ytt -f "$SCRIPT_DIR/../kapp/config" |
+ytt -f "$SCRIPT_DIR/../kapp/" |
   kapp deploy -a bootstrap -f - --yes
 kapp delete -a bootstrap --yes
+
+##########################################
+# 🖼️ Re-tag images
+##########################################
+for IMAGE_NAME in bitnami/nginx:1.25.2 bitnami/oauth2-proxy:7.4.0 bitnami/dex:2.37.0
+do
+  echo "~~ Copying $IMAGE_NAME to local registry"
+  docker pull "$IMAGE_NAME"
+  docker tag "$IMAGE_NAME" "localhost:5000/$IMAGE_NAME"
+  docker push "localhost:5000/$IMAGE_NAME"
+  echo "~~ Copying $IMAGE_NAME to local registry > done"
+done

@@ -1,0 +1,19 @@
+---
+namespace: kubecon
+apps:
+  - name: "apples"
+    description: |-
+      Juicy apples gleam,
+      Orchard whispers in the breeze,
+      Nature's gift of red.
+  - name: "bananas"
+    description: |-
+      Golden curves of joy,
+      Sun's radiant warmth captured,
+      Monkeys delighted.
+  - name: "strawberries"
+    description: |-
+      Crimson gems of June,
+      Drenched in morning's dewy kiss,
+      Summer's sweet treasure.
+

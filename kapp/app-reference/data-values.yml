@@ -1,0 +1,10 @@
+#@data/values
+---
+namespace: kubecon
+apps:
+  - name: "apples"
+    description: "I love apples"
+  - name: "bananas"
+    description: "I love bananas"
+  - name: "strawberries"
+    description: "I love strawberries"

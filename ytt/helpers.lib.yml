@@ -67,3 +67,11 @@ spec:
             port:
               name: #@ app_name
 #@ end
+
+#@ def alternate(text, _):
+#@ result = []
+#@ for i, word in enumerate(text.split(" ")):
+#@  result.append(word if i % 2 == 0 else word.upper())
+#@ end
+#@ return " ".join(result)
+#@ end
